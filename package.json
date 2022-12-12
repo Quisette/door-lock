@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "@discordjs/rest": "^1.4.0",
+    "discord-api-types": "^0.37.21",
+    "discord.js": "^14.7.1"
+  },
+  "name": "bots",
+  "version": "1.0.0",
+  "description": "foo",
+  "main": "newindex.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Quisette",
+  "license": "ISC",
+  "token" : "MTA1MTUwNTE2MTg3NDQ2MDcwMw.GE-qVQ.OMJlHc2jEJy55e8GqYdhzQyHiuSVM-t8XjiMcA"
+}
