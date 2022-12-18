@@ -18,7 +18,7 @@ const softSPI = new SoftSPI({
 // I believe that channing pattern is better for configuring pins which are optional methods to use.
 const mfrc522 = new Mfrc522(softSPI).setResetPin(22).setBuzzerPin(18);
 
-setInterval(function() {
+setInterval(function () {
   //# reset card
   mfrc522.reset();
 
@@ -58,21 +58,21 @@ setInterval(function() {
     console.log("Authentication Error");
     return;
   }
-	let str = ""
+  let str = ""
   //# Dump Block 8
-  for( var i = 8; i <= 8; i++){
-  	console.log("Block: " + i +  " Data: " + mfrc522.getDataForBlock(i));
-	  str += mfrc522.getDataForBlock(i)
+  for (var i = 8; i <= 8; i++) {
+    console.log("Block: " + i + " Data: " + mfrc522.getDataForBlock(i));
+    str += mfrc522.getDataForBlock(i)
 
   }
-	console.log(str)
-	if(str === "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16"){
-		console.log("Auth Successful")
-	}else{
-		console.log("Auth Fail")
-	}
+  console.log(str)
+  if (str === "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16") {
+    console.log("Auth Successful")
+  } else {
+    console.log("Auth Fail")
+  }
 
   //# Stop
   mfrc522.stopCrypto();
-	return process.exit(0)
+  return process.exit(0)
 }, 500);
